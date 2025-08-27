@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="title">Responsives Persönliches Portfolio Website Design | Codehal</title>
+
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- header design -->
+    <header class="header">
+        <a href="#" class="logo" data-translate="logo">Portfolio von Albert Dygov</a>
+        
+        
+        <div class='bx bx-menu' id="menu-icon"></div>
+
+        <nav class="navbar">
+            <button id="lang-switch" 
+          style="margin-left:2rem; font-size:1.2rem; background:var(--main-color); border-radius:8px; border:none; padding:0.5rem 1rem; cursor:pointer;" 
+          data-en="DE | EN" 
+          data-de="EN | DE">
+          EN | DE
+        </button>
+            <a href="#home" class="active" data-translate="nav_home">Start</a>
+            <a href="#about" data-translate="nav_about">Über mich</a>
+            <a href="#services" data-translate="nav_services">Fähigkeiten</a>
+            <a href="#portfolio" data-translate="nav_portfolio">Zertifikate</a>
+            <a href="#contact" data-translate="nav_contact">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- home section design -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3 data-translate="home_welcome">Willkommen</h3>
+            <h1 data-translate="home_name">Ich bin Albert D.</h1>
+            <h3><span style="color: white;" data-translate="home_iam">Und ich bin</span> <span class="multiple-text"></span></h3>
+            <p data-translate="home_text">Motiviert in allem, was ich tue – mit Leidenschaft für Informationssicherheit.</p>
+            <div class="social-media">
+                <a href="https://www.xing.com/profile/Albert_Dygov/web_profiles"><i class='bx bxl-xing'></i></a>
+                <a href="https://www.linkedin.com/in/albert-dygov-39866a297/"><i class='bx bxl-linkedin'></i></a>
+            </div>
+            <a href="CV_AlbertDygov.pdf" download class="btn" data-translate="home_cv">Lebenslauf herunterladen</a>
+        </div>
+
+        <div class="home-img">
+            <img src="images/home.jpg" alt="">
+        </div>
+    </section>
+
+    <!-- about section design -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/about.jpg" alt="">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading" data-translate="about_heading">Über <span style="color: rgb(110, 159, 112);">Mich</span></h2>
+            <h3 data-translate="about_sub">Cyber Security!</h3>
+            <p data-translate="about_text">Schon in jungen Jahren hat mich die Welt der Informatik begeistert. Mit 16 begann ich, in meiner bis heute liebsten Programmiersprache Python zu programmieren und eigene kleine Projekte umzusetzen. Die Begeisterung wuchs schnell, doch 2017 erlebte ich einen Wendepunkt: Ich wurde – wie viele andere – Opfer von NotPetya, und mein Notebook erlitt einen Blue Screen. Dieses Ereignis öffnete mir die Augen für die Bedeutung von Sicherheit in der digitalen Welt. Seitdem hat mich das Thema Cyber Security nicht mehr losgelassen. Es treibt mich an, meine Fähigkeiten kontinuierlich auszubauen und Lösungen zu entwickeln, die Technik und Sicherheit verbinden.</p>
+            <a href="#" class="btn" data-translate="about_more">Mehr lesen</a>
+        </div>
+    </section>
+
+    <!-- services section design -->
+    <section class="services" id="services">
+        <h2 class="heading" data-translate="services_heading">Meine <span style="color: rgb(110, 159, 112);">Fähigkeiten</span></h2>
+
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-book'></i>
+                <h3 data-translate="services_bcm_title">BCM</h3>
+                <p data-translate="services_bcm_text">Business Continuity Management ist ein zentraler Bestandteil der Informationssicherheit und zählt zu meinen persönlichen Lieblingsbereichen.</p>
+                <a href="#" class="btn" data-translate="services_bcm_more">Mehr lesen</a>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bx-shield-quarter'></i>
+                <h3 data-translate="services_bsi_title">ISMS nach BSI-IT Grundschutz</h3>
+                <p data-translate="services_bsi_text">Das BSI vereint meine Interessen an Struktur und Modularität – zwei Aspekte, die unterschiedlicher nicht sein könnten, aber hier ideal kombiniert werden.</p>
+                <a href="#" class="btn" data-translate="services_bsi_more">Mehr lesen</a>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bx-link'></i>
+                <h3 data-translate="services_linux_title">Linux-Administration und Endpoint-Sicherheit</h3>
+                <p data-translate="services_linux_text">Die Arbeit mit Linux verbindet meine Liebe zum Netzwerken, und durch Endpoint Security konnte ich dieses Wissen gezielt erweitern.</p>
+                <a href="#" class="btn" data-translate="services_linux_more">Mehr lesen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- portfolio section design -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading" data-translate="portfolio_heading">Neueste <span style="color: rgb(110, 159, 112);">Zertifikate</span></h2>
+        <h3 class="underheading" data-translate="portfolio_underheading">für den Download klicken !</h3>
+        <div class="wrapper">
+            <a href="pdf/IT-Grundschutz_Praktiker_Zert.pdf" download class="box" data-translate="portfolio_cert1">
+            BSI IT-Grundschutz Praktiker
+            </a>
+            <a href="pdf/ITILv4_Foundation_Zert.pdf" download class="box" data-translate="portfolio_cert2">
+            ITIL v4 Foundation
+            </a>
+            <a href="#" download class="box" data-translate="portfolio_cert3">
+            CCFA | Crowdstrike Certified Falcon Administrator (Geplant)
+            </a>
+        </div>
+    </section>
+
+    <!-- contact section design -->
+    <section class="contact" id="contact">
+        <h2 class="heading" data-translate="contact_heading">Kontaktiere <span style="color: rgb(110, 159, 112);">Mich</span>!</h2>
+        <div class="contact-email" style="display: flex; justify-content: center; align-items: center; margin-top: 2.5rem;">
+            <a href="mailto:albertdygov@tuta.com" class="btn" style="font-size:1.2rem; padding:1rem 2rem; display:inline-block; min-width:270px; text-align:center;" data-en="albertdygov@tuta.com" data-de="albertdygov@tuta.com">albertdygov@tuta.com</a>
+        </div>
+    </section>
+    
+
+    <!-- footer design -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p data-translate="footer_text">Copyright © 2025 von Albert Dygov | Alle Rechte vorbehalten.</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- typed js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
