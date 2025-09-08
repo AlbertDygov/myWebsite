@@ -98,7 +98,7 @@ const translations = {
       portfolio_underheading: "für den Download klicken !",
       portfolio_cert1: "BSI IT-Grundschutz Praktiker",
       portfolio_cert2: "ITIL v4 Foundation",
-      portfolio_cert3: "CCFA | Crowdstrike Certified Falcon Administrator (Geplant)",
+      portfolio_cert3: "CCFA | Crowdstrike Certified Falcon Administrator (Neu)",
   
       contact_heading: "Kontaktiere <span style='color:rgb(110, 159, 112);'>Mich</span>!",
       contact_name: "Vollständiger Name",
@@ -108,7 +108,8 @@ const translations = {
       contact_message: "Deine Nachricht",
       contact_send: "Nachricht senden",
   
-      footer_text: "Copyright © 2025 von Albert Dygov | Alle Rechte vorbehalten."
+      footer_text: "Copyright © 2025 von Albert Dygov | Alle Rechte vorbehalten.",
+      rss_text: "!! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! "
     },
   
     en: {
@@ -147,7 +148,7 @@ const translations = {
       portfolio_underheading: "click for the download !",
       portfolio_cert1: "BSI IT-Baseline Protection Practitioner",
       portfolio_cert2: "ITIL v4 Foundation",
-      portfolio_cert3: "CCFA | Crowdstrike Certified Falcon Administrator (Upcoming)",
+      portfolio_cert3: "CCFA | Crowdstrike Certified Falcon Administrator (NEW)",
   
       contact_heading: "Contact <span style='color:rgb(110, 159, 112);'>Me</span>!",
       contact_name: "Full Name",
@@ -157,7 +158,8 @@ const translations = {
       contact_message: "Your Message",
       contact_send: "Send Message",
   
-      footer_text: "Copyright © 2025 by Albert Dygov | All Rights Reserved."
+      footer_text: "Copyright © 2025 by Albert Dygov | All Rights Reserved.",
+      rss_text: "!! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !!"
     }
   };
   
@@ -189,3 +191,37 @@ const translations = {
   // Startsprache direkt beim Laden anwenden
   updateTranslations();
   
+
+  /*==================== typed js ====================*/
+const scroll = document.getElementById("scrollText");
+let containerWidth = scroll.parentElement.offsetWidth;
+let text = scroll.innerHTML;
+
+
+scroll.innerHTML = text + " " + text;
+
+let posX = containerWidth; 
+const speed = 100; 
+
+function animate(timestamp) {
+    const deltaTime = 1 / 100; 
+    posX -= speed * deltaTime;
+
+    const textWidth = scroll.offsetWidth / 2; 
+
+    
+    if (posX <= -textWidth) {
+        posX += textWidth;
+    }
+
+    scroll.style.transform = `translateX(${posX}px)`;
+    requestAnimationFrame(animate);
+}
+
+// Responsiv
+window.addEventListener("resize", () => {
+    containerWidth = scroll.parentElement.offsetWidth;
+    posX = containerWidth; // Start wieder ganz rechts
+});
+
+requestAnimationFrame(animate);
