@@ -80,7 +80,8 @@ const translations = {
       about_sub: "Cyber Security!",
       about_text: "Schon in jungen Jahren hat mich die Welt der Informatik begeistert. Mit 16 begann ich, in meiner bis heute liebsten Programmiersprache Python zu programmieren und eigene kleine Projekte umzusetzen. Die Begeisterung wuchs schnell, doch 2017 erlebte ich einen Wendepunkt: Ich wurde – wie viele andere – Opfer von NotPetya, und mein Notebook erlitt einen Blue Screen. Dieses Ereignis öffnete mir die Augen für die Bedeutung von Sicherheit in der digitalen Welt. Seitdem hat mich das Thema Cyber Security nicht mehr losgelassen. Es treibt mich an, meine Fähigkeiten kontinuierlich auszubauen und Lösungen zu entwickeln, die Technik und Sicherheit verbinden.",
       about_more: "Mehr lesen",
-  
+      
+      title: "Albert Dygov",
       services_heading: "Meine <span style='color:rgb(110, 159, 112);'>Fähigkeiten</span>",
       services_bcm_title: "BCM",
       services_bcm_text: "Business Continuity Management ist ein zentraler Bestandteil der Informationssicherheit und zählt zu meinen persönlichen Lieblingsbereichen.",
@@ -131,6 +132,7 @@ const translations = {
       about_text: "From a young age, I was fascinated by the world of computer science. At 16, I started programming in my still favorite language, Python, and creating small projects. My enthusiasm grew quickly, but in 2017 I experienced a turning point: like many others, I fell victim to NotPetya, and my laptop suffered a Blue Screen. This event opened my eyes to the importance of security in the digital world. Since then, the topic of Cyber Security has never let me go. It drives me to continuously expand my skills and develop solutions that combine technology and security.",
       about_more: "Read More",
   
+      title: "Albert Dygov",
       services_heading: "My <span style='color:rgb(110, 159, 112);'>Skills</span>",
       services_bcm_title: "BCM",
       services_bcm_text: "Business Continuity Management is a central part of information security and one of my personal favorite areas.",
