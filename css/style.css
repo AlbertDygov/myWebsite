@@ -31,9 +31,9 @@ body {
     position: relative;
     min-height: 100vh;
     overflow: hidden;
+    background: black;
 }
 
-/* === UNSCHARFER HINTERGRUND OHNE RAND === */
 body::before {
     content: "";
     position: absolute;
@@ -48,10 +48,12 @@ body::before {
 }
 
 section {
-    min-height: 100vh;
+    min-height: 50vh;
     padding: 10rem 9% 2rem;
     gap: 20px;
 }
+
+/*-----------------------Header Beginn-------------------------------*/
 
 .over_header {
     position: fixed;
@@ -60,6 +62,23 @@ section {
     width: 100%;
     z-index: 100;
 }
+
+.rssBlock {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: rgb(0, 0, 0);
+    font-size: 30px;
+    color: rgb(110, 159, 112);
+    width: 100%;
+    height: 50px;
+    position: relative;
+}
+
+.scroll {
+    position: absolute;
+    white-space: nowrap;
+}
+
 
 .header {
     width: 100%;
@@ -99,17 +118,20 @@ img.logo {
     display: none;
 }
 
+/*-----------------------Home-Section Begin-------------------------------*/
+
 .home {
     display: flex;
     justify-content: center;
     align-items: center;
+   
 }
 
 .home-img img {
     width: 25vw;
-    animation: floatImage 4s ease-in-out infinite;
-    border-radius: 20px;
-    box-shadow: 10px 10px 10px rgb(100, 100, 100);
+    animation: floatImage 2s ease-in-out infinite;
+    border-radius: 160px;
+    box-shadow: 10px 10px 10px rgb(110, 159, 112);
 }
 
 @keyframes floatImage {
@@ -191,6 +213,8 @@ span {
     box-shadow: none;
 }
 
+/*-----------------------About-Section Begin -------------------------------*/
+
 .about {
     display: flex;
     justify-content: center;
@@ -223,6 +247,8 @@ span {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
 }
+
+/*-----------------------Skill Section Begin-------------------------------*/
 
 .services {
     min-height: auto;
@@ -272,6 +298,8 @@ span {
     margin: 1rem 0 3rem;
 }
 
+/*-----------------------Certificat Section Begin-------------------------------*/
+
 .portfolio {
     background: black;
     min-height: auto;
@@ -318,6 +346,8 @@ span {
     cursor: pointer;
 }
 
+/*-----------------------Contact Section Begin-------------------------------*/
+
 contact .contact-email{
     display: flex;
     justify-content: center;
@@ -334,6 +364,8 @@ contact .contact-email{
 .contact h2 {
     margin-bottom: 3rem;
 }
+
+/*-----------------------Footer Section Begin-------------------------------*/
 
 .footer {
     display: flex;
@@ -368,6 +400,8 @@ contact .contact-email{
 }
 
 
+/*-----------------------RESPONSIVE SECTION -------------------------------*/
+
 /* BREAKPOINTS */
 @media (max-width: 1200px) {
     html {
@@ -395,9 +429,29 @@ contact .contact-email{
     }
 }
 
-@media (max-width: 768px) {
+@media(max-width: 889px) {
+    img.logo {
+        height: 25px;
+        width: 150px;
+    }
+
+}
+
+@media (max-width: 760px) {
+    .home-img img,
+    .about img {
+        width: 40%;
+        height: auto; /* damit das Seitenverhältnis stimmt */
+    }
+}
+
+@media (max-width: 777px) {
     #menu-icon {
         display: block;
+    }
+    img.logo {
+        height: 50px;
+        width: 250px;
     }
 
     .navbar {
@@ -424,28 +478,55 @@ contact .contact-email{
 
     .home {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .home-img img {
+        width: 50%;
+        margin-top: 4rem;
+    }
+
+    .home-content {
+    order: 2; /* Text nach dem Bild */
     }
 
     .home-content h3 {
         font-size: 2.6rem;
+        text-align: center;
     }
 
     .home-content h1 {
         font-size: 5rem;
+        text-align: center;
     }
 
-    .home-img img {
-        width: 70vw;
-        margin-top: 4rem;
-    }
 
     .about {
         flex-direction: column-reverse;
+        display: flex;
+        justify-content: center; /* Box horizontal zentrieren */
+        align-items: center;     /* Box vertikal zentrieren */
+        text-align: center;        /* Text linksbündig */
+    }
+
+    .about-content {   
+        padding: 2rem;          /* Innenabstand */
+        border-radius: 1rem;    /* runde Ecken */
+        max-width: 600px;        /* maximale Breite der Box */
+        width: 90%;
+    }
+
+    .about-content h2 {   
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .about-content p {
+        text-align:center;      
     }
 
     .about img {
-        width: 70vw;
-        margin-top: 4rem;
+        display: none;
     }
 }
 
@@ -474,6 +555,15 @@ contact .contact-email{
     }
 }
 
+@media (max-width: 760px) {
+    .home-img img,
+    .about img {
+        width: 40%;
+        height: auto; /* damit das Seitenverhältnis stimmt */
+    }
+}
+
+
 @media (max-width: 365px) {
 
     .home-img img,
@@ -481,19 +571,8 @@ contact .contact-email{
         width: 90vw;
     }
 }
-/*-----------------------das ist eine neue Section-------------------------------*/
-.rssBlock {
-    overflow: hidden;
-    white-space: nowrap;
-    background-color: rgb(0, 0, 0);
-    font-size: 30px;
-    color: rgb(110, 159, 112);
-    width: 100%;
-    height: 50px;
-    position: relative;
-}
 
-.scroll {
-    position: absolute;
-    white-space: nowrap;
+.header.scrolled {
+  background: rgb(0, 0, 0); /* Hintergrund beim Scrollen */
 }
+/*-----------------------das ist eine neue Section-------------------------------*/
