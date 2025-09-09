@@ -48,7 +48,7 @@ body::before {
 }
 
 section {
-    min-height: 50vh;
+    min-height: 60vh;
     padding: 10rem 9% 2rem;
     gap: 20px;
 }
@@ -128,7 +128,7 @@ img.logo {
 }
 
 .home-img img {
-    width: 25vw;
+    width: 250px;
     animation: floatImage 2s ease-in-out infinite;
     border-radius: 160px;
     box-shadow: 10px 10px 10px rgb(110, 159, 112);
@@ -152,6 +152,7 @@ img.logo {
     font-size: 3.2rem;
     font-weight: 700;
 }
+
 
 .home-content h3:nth-of-type(2) {
     margin-bottom: 2rem;
@@ -216,6 +217,7 @@ span {
 /*-----------------------About-Section Begin -------------------------------*/
 
 .about {
+    
     display: flex;
     justify-content: center;
     align-items: center;
