@@ -110,7 +110,7 @@ const translations = {
       contact_send: "Nachricht senden",
   
       footer_text: "Copyright © 2025 von Albert Dygov | Alle Rechte vorbehalten.",
-      rss_text: "!! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! Ich habe ein NEUES Zertifikat !! "
+      rss_text: " ! ich bin nun CCFA - Zertifiziert ! - ! ich bin nun CCFA - Zertifiziert ! - ! ich bin nun CCFA - Zertifiziert !  - ! ich bin nun CCFA - Zertifiziert ! - ! ich bin nun CCFA - Zertifiziert ! - ! ich bin nun CCFA - Zertifiziert ! - ! ich bin nun CCFA - Zertifiziert ! - ! ich bin nun CCFA - Zertifiziert ! - ! ich bin nun CCFA - Zertifiziert ! - ! ich bin nun CCFA - Zertifiziert !"
     },
   
     en: {
@@ -161,7 +161,7 @@ const translations = {
       contact_send: "Send Message",
   
       footer_text: "Copyright © 2025 by Albert Dygov | All Rights Reserved.",
-      rss_text: "!! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !! I have a NEW Certificate !!"
+      rss_text: "I am now CCFA certified! - I am now CCFA certified! - I am now CCFA certified! - I am now CCFA certified! - I am now CCFA certified! - I am now CCFA certified! - I am now CCFA certified! - I am now CCFA certified! - I am now CCFA certified! - I am now CCFA certified!"
     }
   };
   
