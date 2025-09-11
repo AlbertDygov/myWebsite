@@ -316,37 +316,92 @@ span {
     margin-bottom: 4rem;
     font-size: 25px;
 }
-
 .wrapper {
-    display: grid;
-    gap: 20px;
-    padding: 20px;
-    font-family: 'Poppins', sans-serif;
-    
+  display: grid;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
-.box {
-    display: block; /* Link-Box */
-    background:rgb(110, 159, 112);
-    color: white;
-    font-size: 20px;
-    padding: 40px;
-    text-align: center;
-    border-radius: 15px;
-    text-decoration: none;
-    transition: background 0.3s;
-    align-content: center;  
-    box-shadow:0 0 1rem var(--main-color);; 
+.accordion-item {
+  background: rgb(110, 159, 112);
+  border-radius: 15px;
+  box-shadow: 0 0 1rem var(--main-color);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: white;
+  width: 50%;
+  margin: 20px auto; /* Zentriert in der Seite */
 }
 
-.box:hover{
-    box-shadow:0 0 0rem var(--main-color);;
+.accordion-header {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.box:hover {
-    background: black;
-    cursor: pointer;
+.accordion-item:hover .accordion-header {
+  background: rgb(0, 0, 0);
 }
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 15px;  /* Anfangs ohne extra padding */
+}
+
+.accordion-item:hover .accordion-content {
+  max-height: 500px; /* Etwas mehr Höhe, damit alles passt */
+  padding: 15px;
+}
+
+/* Flex-Layout für Bild + Text nebeneinander */
+.accordion-inner-p-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px; /* Abstand zwischen Bild und Text */
+  margin-bottom: 20px;
+}
+
+.accordion-inner img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.accordion-inner-p-wrapper p {
+  margin: 0;
+  font-size: 15px;
+  flex: 1; /* Text nimmt den restlichen Platz ein */
+}
+
+.accordion-content a {
+  display: block;          /* Block-Level, damit margin auto wirkt */
+  width: max-content;      /* Passt Button-Breite an Inhalt an */
+  padding: 10px 20px;
+  background: white;
+  color: rgb(110, 159, 112);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 1rem black;
+  margin: 20px auto 0 auto; /* Oben 20px, horizontal auto → mittig */
+  text-align: center;
+}
+
+
+.accordion-content a:hover {
+  background: rgb(255, 255, 255);
+  color: rgb(110, 159, 112);
+  box-shadow: 0 0 0rem;
+}
+
+
 
 /*-----------------------Contact Section Begin-------------------------------*/
 
@@ -424,6 +479,18 @@ contact .contact-email{
     .footer {
         padding: 2rem 3%;
     }
+
+    .accordion-item {
+        width: 70%;
+    }
+
+    .accordion-inner img {
+        width: 120px;
+    }
+
+    .accordion-inner-p-wrapper p {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 879px) {
@@ -445,6 +512,20 @@ contact .contact-email{
     .about img {
         width: 40%;
         height: auto; /* damit das Seitenverhältnis stimmt */
+    }
+    .accordion-inner-p-wrapper {
+        flex-direction: column; /* untereinander statt nebeneinander */
+        align-items: center;    /* alles zentriert */
+        gap: 20px;
+    }
+
+    .accordion-inner img {
+        width: 90px; /* Bild verkleinern */
+    }
+
+    .accordion-inner-p-wrapper p {
+        text-align: center; /* Text zentrieren */
+        font-size: 13px;
     }
 }
 
@@ -539,6 +620,7 @@ contact .contact-email{
     .about img {
         display: none;
     }
+
 }
 
 @media (max-width: 580px) {
@@ -563,6 +645,18 @@ contact .contact-email{
     .footer p {
         text-align: center;
         margin-top: 2rem;
+    }
+
+    .accordion-item {
+        width: 90%; /* Vollbreite fast */
+    }
+
+    .accordion-inner img {
+        width: 70px; /* Bild noch kleiner */
+    }
+
+    .accordion-inner-p-wrapper p {
+        font-size: 12px;
     }
 }
 
