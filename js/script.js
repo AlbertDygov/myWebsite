@@ -1,11 +1,11 @@
 /*==================== toggle icon navbar ====================*/
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+//let menuIcon = document.querySelector('#menu-icon');
+//let navbar = document.querySelector('.navbar');
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-};
+//menuIcon.onclick = () => {
+//    menuIcon.classList.toggle('bx-x');
+//    navbar.classList.toggle('active');
+//};
 
 
 /*==================== scroll sections active link ====================*/
@@ -31,8 +31,8 @@ window.onscroll = () => {
 
     header.classList.toggle('sticky', window.scrollY > 100);
 
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
+    //menuIcon.classList.remove('bx-x');
+    //navbar.classList.remove('active');
 };
 
 
@@ -239,4 +239,47 @@ window.addEventListener("scroll", () => {
   } else {
     header.classList.remove("scrolled");
   }
+});
+
+
+//menu button
+const menuBtn = document.getElementById('menu-btn');
+const menu = document.getElementById('menu');
+const menuItems = menu.querySelectorAll('a'); // Alle Links im Menü auswählen
+
+// Menü öffnen/schließen beim Button-Klick
+menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    menu.classList.toggle('open');
+});
+
+// Menü schließen, wenn ein Menüpunkt angeklickt wird
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        menuBtn.classList.remove('open');
+        menu.classList.remove('open');
+    });
+});
+
+
+//Accordion logik
+const accordionItems = document.querySelectorAll('.accordion-item');
+
+accordionItems.forEach(item => {
+    const content = item.querySelector('.accordion-content');
+
+    item.addEventListener('click', () => {
+        if (window.innerWidth <= 760) {
+            // Wenn das aktuelle Accordion schon offen ist
+            const isActive = item.classList.contains('active');
+
+            // Alle Accordions schließen
+            accordionItems.forEach(i => i.classList.remove('active'));
+
+            // Nur das aktuelle öffnen, falls es nicht aktiv war
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+    });
 });

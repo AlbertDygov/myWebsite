@@ -27,26 +27,49 @@
 
 
         <header class="header">
-
             <img class="logo" src="images/logo_Transparent.png">
 
-            <div class='bx bx-menu' id="menu-icon"></div>
-            
+            <!-- Neuer extravagante Hamburger Button -->
+            <div class="menu-btn" id="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
             <nav class="navbar">
                 <button id="lang-switch" 
-            style="margin-left:2rem; font-size:1.2rem; background:var(--main-color); border-radius:8px; border:none; padding:0.5rem 1rem; cursor:pointer;" 
-            data-en="DE | EN" 
-            data-de="EN | DE">
-            EN | DE
-            </button>
+                    style="margin-left:2rem; font-size:1.2rem; background:var(--main-color); border-radius:8px; border:none; padding:0.5rem 1rem; cursor:pointer;" 
+                    data-en="DE | EN" 
+                    data-de="EN | DE">
+                    EN | DE
+                </button>
                 <a href="#home" class="active" data-translate="nav_home">Start</a>
                 <a href="#about" data-translate="nav_about">Über mich</a>
                 <a href="#services" data-translate="nav_services">Fähigkeiten</a>
                 <a href="#portfolio" data-translate="nav_portfolio">Zertifikate</a>
                 <a href="#contact" data-translate="nav_contact">Kontakt</a>
             </nav>
+
+            <div class="menu" id="menu">
+                <ul>
+                    <li><button id="lang-switch" 
+                    style="margin-left:2rem; font-size:1.2rem; background:var(--main-color); border-radius:8px; border:none; padding:0.5rem 1rem; cursor:pointer;" 
+                    data-en="DE | EN" 
+                    data-de="EN | DE">
+                    EN | DE</button></li>
+                    <li><a href="#home" class="active" data-translate="nav_home">Startseite</a></li>
+                    <li><a href="#about" data-translate="nav_about">Über mich</a></li>
+                    <li><a href="#services" data-translate="nav_services">Fähigkeiten</a></li>
+                    <li><a href="#portfolio" data-translate="nav_portfolio">Zertifikate</a></li>
+                    <li><a href="#contact" data-translate="nav_contact">Kontakt</a></li>
+                </ul>
+            </div>
         </header>
+
+
+        <!-- Fullscreen Menü passend zum neuen Button -->
+        
+
     </div>
 
     <!-- home section design -->
