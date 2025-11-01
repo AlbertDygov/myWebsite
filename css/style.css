@@ -11,14 +11,14 @@
 }
 
 :root {
-    --bg-img: url("Hacking_Background.png"); /* nur die Bildquelle */
+    --bg-img: url("Hacking_Background.png");
     --text-color: #e4e4e4;
     --main-color: rgb(110, 159, 112);
 }
 
 *::selection {
     background: var(--main-color);
-    color: black; /* Textfarbe beim Markieren */
+    color: black;
 }
 
 html {
@@ -33,21 +33,22 @@ body {
     overflow: hidden;
     background: black;
 }
- a {
+
+a {
     color: white;
-  }
+}
 
 body::before {
     content: "";
     position: absolute;
-    top: -20px;   
+    top: -20px;
     left: -20px;
     width: calc(100% + 40px);
     height: calc(100% + 40px);
     background-image: var(--bg-img);
-    filter: blur(9px);  
-    z-index: -1;     
-    background-repeat: no-repeat;   
+    filter: blur(9px);
+    z-index: -1;
+    background-repeat: no-repeat;
 }
 
 section {
@@ -110,8 +111,56 @@ img.logo {
     transition: .3s;
 }
 
-/* Hamburger Button oben rechts */
-/* Grundposition des Buttons im Header */
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+.lang-switch-btn {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    background: var(--main-color);
+    border-radius: 8px;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 1rem var(--main-color);
+    transition: .3s ease;
+    color: white;
+}
+
+.lang-switch-btn:hover {
+    box-shadow: 0 0 1.5rem var(--main-color);
+}
+
+.menu-lang-btn {
+    margin-left: 0;
+}
+
+.home-iam-text {
+    color: white;
+}
+
+.main-color-text {
+    color: rgb(110, 159, 112);
+}
+
+.contact-email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+.contact-email-btn {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    display: inline-block;
+    min-width: 270px;
+    text-align: center;
+}
+
+/* Hamburger Button */
 .menu-btn {
     display: none; /* Standardmäßig versteckt */
     cursor: pointer;
@@ -173,7 +222,7 @@ img.logo {
 }
 
 .menu ul {
-    list-style: none; /* ← Punkte entfernen */
+    list-style: none;
     padding: 0;
     margin: 0;
 }
@@ -188,32 +237,47 @@ img.logo {
     cursor: pointer;
 }
 
+.menu ul li a {
+    color: var(--text-color);
+    transition: .3s ease;
+}
+
+.menu ul li a:hover {
+    color: var(--main-color);
+}
+
 .menu.open ul li {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
 
-.menu.open ul li:nth-child(1) { transition-delay: 0.1s; }
-.menu.open ul li:nth-child(2) { transition-delay: 0.2s; }
-.menu.open ul li:nth-child(3) { transition-delay: 0.3s; }
-.menu.open ul li:nth-child(4) { transition-delay: 0.4s; }
-.menu.open ul li:nth-child(5) { transition-delay: 0.5s; }
+.menu.open ul li:nth-child(1) { 
+    transition-delay: 0.1s; 
+}
+
+.menu.open ul li:nth-child(2) { 
+    transition-delay: 0.2s; 
+}
+
+.menu.open ul li:nth-child(3) { 
+    transition-delay: 0.3s; 
+}
+
+.menu.open ul li:nth-child(4) { 
+    transition-delay: 0.4s; 
+}
+
+.menu.open ul li:nth-child(5) { 
+    transition-delay: 0.5s; 
+}
+
+.menu.open ul li:nth-child(6) { 
+    transition-delay: 0.6s; 
+}
 
 .menu ul li:hover {
     color: var(--main-color);
     transform: scale(1.2);
-}
-/* Bestehende Navbar bleibt unverändert */
-.navbar a {
-    font-size: 1.7rem;
-    color: var(--text-color);
-    margin-left: 4rem;
-    transition: .3s;
-}
-
-.navbar a:hover,
-.navbar a.active {
-    color: var(--main-color);
 }
 
 
@@ -223,7 +287,7 @@ img.logo {
     display: flex;
     justify-content: center;
     align-items: center;
-   margin-top: 100px;
+    margin-top: 100px;
 }
 
 .home-img img {
@@ -292,9 +356,6 @@ span {
     box-shadow: 0 0 1rem var(--main-color);
 }
 
-#lang-switch{
-    box-shadow: 0 0 1rem var(--main-color);
-}
 
 .btn {
     display: inline-block;
@@ -316,7 +377,6 @@ span {
 /*-----------------------About-Section Begin -------------------------------*/
 
 .about {
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -411,106 +471,95 @@ span {
 .portfolio h2 {
     margin-bottom: 4rem;
 }
-.portfolio h3{
+.portfolio h3 {
     margin-bottom: 4rem;
     font-size: 25px;
 }
-.wrapper {
-  display: grid;
-  padding: 20px;
-  font-family: 'Poppins', sans-serif;
-}
 
 .accordion-item {
-  background: rgb(110, 159, 112);
-  border-radius: 15px;
-  box-shadow: 0 0 1rem var(--main-color);
-  overflow: hidden;
-  transition: all 0.3s ease;
-  color: white;
-  width: 50%;
-  margin: 20px auto; /* Zentriert in der Seite */
+    background: rgb(110, 159, 112);
+    border-radius: 15px;
+    box-shadow: 0 0 1rem var(--main-color);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: white;
+    width: 50%;
+    margin: 20px auto;
 }
 
 .accordion-header {
-  padding: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.3s ease;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 .accordion-item:hover .accordion-header {
-  background: rgb(0, 0, 0);
+    background: rgb(0, 0, 0);
 }
 
 .accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-  padding: 0 15px;  /* Anfangs ohne extra padding */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 15px;
 }
 
 .accordion-item:hover .accordion-content {
-  max-height: 500px; /* Etwas mehr Höhe, damit alles passt */
-  padding: 15px;
+    max-height: 500px;
+    padding: 15px;
 }
 
 /* Flex-Layout für Bild + Text nebeneinander */
 .accordion-inner-p-wrapper {
-  display: flex;
-  align-items: flex-start;
-  gap: 50px; /* Abstand zwischen Bild und Text */
-  margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    margin-bottom: 20px;
 }
 
 .accordion-inner img {
-  width: 150px;
-  height: auto;
-  border-radius: 8px;
-  object-fit: contain;
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
 }
 
 .accordion-inner-p-wrapper p {
-  margin: 0;
-  font-size: 15px;
-  flex: 1; /* Text nimmt den restlichen Platz ein */
+    margin: 0;
+    font-size: 15px;
+    flex: 1;
 }
 
 .accordion-content a {
-  display: block;          /* Block-Level, damit margin auto wirkt */
-  width: max-content;      /* Passt Button-Breite an Inhalt an */
-  padding: 10px 20px;
-  background: white;
-  color: rgb(110, 159, 112);
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background 0.3s ease, color 0.3s ease;
-  box-shadow: 0 0 1rem black;
-  margin: 20px auto 0 auto; /* Oben 20px, horizontal auto → mittig */
-  text-align: center;
+    display: block;
+    width: max-content;
+    padding: 10px 20px;
+    background: white;
+    color: rgb(110, 159, 112);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+    box-shadow: 0 0 1rem black;
+    margin: 20px auto 0 auto;
+    text-align: center;
 }
 
 
 .accordion-content a:hover {
-  background: rgb(255, 255, 255);
-  color: rgb(110, 159, 112);
-  box-shadow: 0 0 0rem;
+    background: rgb(255, 255, 255);
+    color: rgb(110, 159, 112);
+    box-shadow: 0 0 0rem;
 }
 
 
 
 /*-----------------------Contact Section Begin-------------------------------*/
 
-contact .contact-email{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2.5rem;
-}
-.contact{
+.contact {
     min-height: auto;
     padding-bottom: 7rem;
     align-content: center;
@@ -598,7 +647,7 @@ contact .contact-email{
     }
 }
 
-@media(max-width: 889px) {
+@media (max-width: 889px) {
     img.logo {
         height: 45px;
         width: 205px;
@@ -610,20 +659,21 @@ contact .contact-email{
     .home-img img,
     .about img {
         width: 40%;
-        height: auto; /* damit das Seitenverhältnis stimmt */
+        height: auto;
     }
+
     .accordion-inner-p-wrapper {
-        flex-direction: column; /* untereinander statt nebeneinander */
-        align-items: center;    /* alles zentriert */
+        flex-direction: column;
+        align-items: center;
         gap: 20px;
     }
 
     .accordion-inner img {
-        width: 90px; /* Bild verkleinern */
+        width: 90px;
     }
 
     .accordion-inner-p-wrapper p {
-        text-align: center; /* Text zentrieren */
+        text-align: center;
         font-size: 13px;
     }
 
@@ -635,14 +685,13 @@ contact .contact-email{
     }
 
     .accordion-item.active .accordion-content {
-        max-height: 500px; /* Höhe anpassen je nach Inhalt */
+        max-height: 500px;
         padding: 15px;
     }
 }
 
 
 @media (max-width: 777px) {
-    
     img.logo {
         height: 50px;
         width: 250px;
@@ -692,7 +741,7 @@ contact .contact-email{
     }
 
     .home-content {
-    order: 2; /* Text nach dem Bild */
+        order: 2;
     }
 
     .home-content h3 {
@@ -714,20 +763,20 @@ contact .contact-email{
         text-align: center;        /* Text linksbündig */
     }
 
-    .about-content {   
-        padding: 2rem;          /* Innenabstand */
-        border-radius: 1rem;    /* runde Ecken */
-        max-width: 600px;        /* maximale Breite der Box */
+    .about-content {
+        padding: 2rem;
+        border-radius: 1rem;
+        max-width: 600px;
         width: 90%;
     }
 
-    .about-content h2 {   
+    .about-content h2 {
         margin-bottom: 1rem;
         text-align: center;
     }
 
     .about-content p {
-        text-align:center;      
+        text-align: center;
     }
 
     .about img {
@@ -736,27 +785,14 @@ contact .contact-email{
 
 }
 
-@media (max-width: 760px) {
-  .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-      padding: 0 15px; /* Anfangs keine Höhe / Padding */
-  }
-
-  .accordion-item.active .accordion-content {
-      max-height: 500px; /* Höhe nach Bedarf */
-      padding: 15px;
-  }
-}
 
 
 /* Hover nur auf Desktop */
 @media (min-width: 761px) {
-  .accordion-item:hover .accordion-content {
-      max-height: 500px; /* Höhe nach Bedarf anpassen */
-      padding: 15px;
-  }
+    .accordion-item:hover .accordion-content {
+        max-height: 500px;
+        padding: 15px;
+    }
 }
 
 
@@ -797,23 +833,14 @@ contact .contact-email{
     }
 }
 
-@media (max-width: 760px) {
-    .home-img img,
-    .about img {
-        width: 40%;
-        height: auto; /* damit das Seitenverhältnis stimmt */
-    }
-}
 
 
 @media (max-width: 365px) {
-
-    .home-img img{
+    .home-img img {
         width: 50vw;
     }
 }
 
 .header.scrolled {
-  background: rgb(0, 0, 0); /* Hintergrund beim Scrollen */
+    background: rgb(0, 0, 0);
 }
-/*-----------------------das ist eine neue Section-------------------------------*/

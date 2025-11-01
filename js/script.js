@@ -1,44 +1,35 @@
-/*==================== toggle icon navbar ====================*/
-//let menuIcon = document.querySelector('#menu-icon');
-//let navbar = document.querySelector('.navbar');
-
-//menuIcon.onclick = () => {
-//    menuIcon.classList.toggle('bx-x');
-//    navbar.classList.toggle('active');
-//};
 
 
-/*==================== scroll sections active link ====================*/
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+/*==================== Scroll Sections Active Link ====================*/
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('header nav a');
 
 window.onscroll = () => {
     sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+        const top = window.scrollY;
+        const offset = sec.offsetTop - 150;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute('id');
 
-        if(top >= offset && top < offset + height) {
+        if (top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                const activeLink = document.querySelector(`header nav a[href*="${id}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
             });
-        };
+        }
     });
-    /*==================== sticky navbar ====================*/
-    let header = document.querySelector('header');
 
+    /*==================== Sticky Navbar ====================*/
+    const header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 100);
-
-    //menuIcon.classList.remove('bx-x');
-    //navbar.classList.remove('active');
 };
 
 
-/*==================== scroll reveal ====================*/
+/*==================== Scroll Reveal ====================*/
 ScrollReveal({
-    // reset: true,
     distance: '80px',
     duration: 2000,
     delay: 200
@@ -50,16 +41,14 @@ ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 
-/*==================== typed js ====================*/
+/*==================== Typed JS ====================*/
 const typed = new Typed('.multiple-text', {
     strings: ['Security consultant'],
     typeSpeed: 100,
-
     loop: false
 });
 
-
-/*=====das andere=====*/
+/*==================== Translations ====================*/
 
 const translations = {
     de: {
@@ -165,53 +154,67 @@ const translations = {
     }
   };
   
-  let currentLang = "de"; // Startsprache
-  const switchBtn = document.getElementById("lang-switch");
-  
-  function updateTranslations() {
-    document.querySelectorAll("[data-translate]").forEach(el => {
-      const key = el.getAttribute("data-translate");
-      if(el.tagName === "INPUT") {
-        if(el.type === "submit") el.value = translations[currentLang][key];
-        else el.placeholder = translations[currentLang][key];
-      } else if(el.tagName === "TEXTAREA") {
-        el.placeholder = translations[currentLang][key];
-      } else {
-        el.innerHTML = translations[currentLang][key]; // für <span> im Text
-      }
-    });
-    document.documentElement.setAttribute("lang", currentLang);
-  }
-  
-  // Sprache wechseln beim Button-Klick
-  switchBtn.addEventListener("click", () => {
-    currentLang = currentLang === "de" ? "en" : "de";
-    switchBtn.textContent = switchBtn.getAttribute("data-" + currentLang);
-    updateTranslations();
-  });
-  
-  // Startsprache direkt beim Laden anwenden
-  updateTranslations();
-  
+let currentLang = "de";
+const switchBtn = document.getElementById("lang-switch");
+const switchBtnMobile = document.querySelector(".menu-lang-btn");
 
-  /*==================== typed js ====================*/
+function updateTranslations() {
+    document.querySelectorAll("[data-translate]").forEach(el => {
+        const key = el.getAttribute("data-translate");
+        if (el.tagName === "INPUT") {
+            if (el.type === "submit") {
+                el.value = translations[currentLang][key];
+            } else {
+                el.placeholder = translations[currentLang][key];
+            }
+        } else if (el.tagName === "TEXTAREA") {
+            el.placeholder = translations[currentLang][key];
+        } else {
+            el.innerHTML = translations[currentLang][key];
+        }
+    });
+    
+    document.documentElement.setAttribute("lang", currentLang);
+    
+    if (switchBtn) {
+        switchBtn.textContent = switchBtn.getAttribute(`data-${currentLang}`);
+    }
+    if (switchBtnMobile) {
+        switchBtnMobile.textContent = switchBtnMobile.getAttribute(`data-${currentLang}`);
+    }
+}
+
+function toggleLanguage() {
+    currentLang = currentLang === "de" ? "en" : "de";
+    updateTranslations();
+}
+
+if (switchBtn) {
+    switchBtn.addEventListener("click", toggleLanguage);
+}
+
+if (switchBtnMobile) {
+    switchBtnMobile.addEventListener("click", toggleLanguage);
+}
+
+updateTranslations();
+
+/*==================== Scrolling Text Animation ====================*/
 const scroll = document.getElementById("scrollText");
 let containerWidth = scroll.parentElement.offsetWidth;
-let text = scroll.innerHTML;
-
+const text = scroll.innerHTML;
 
 scroll.innerHTML = text + " " + text;
 
-let posX = containerWidth; 
-const speed = 100; 
+let posX = containerWidth;
+const speed = 100;
 
-function animate(timestamp) {
-    const deltaTime = 1 / 100; 
+function animate() {
+    const deltaTime = 1 / 100;
     posX -= speed * deltaTime;
 
-    const textWidth = scroll.offsetWidth / 2; 
+    const textWidth = scroll.offsetWidth / 2;
 
-    
     if (posX <= -textWidth) {
         posX += textWidth;
     }
@@ -220,40 +223,34 @@ function animate(timestamp) {
     requestAnimationFrame(animate);
 }
 
-// Responsiv
 window.addEventListener("resize", () => {
     containerWidth = scroll.parentElement.offsetWidth;
-    posX = containerWidth; // Start wieder ganz rechts
+    posX = containerWidth;
 });
 
 requestAnimationFrame(animate);
 
-
-//#Scroll EVENT 
-
+/*==================== Scroll Header Event ====================*/
 const header = document.querySelector(".header");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 0) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
+    if (window.scrollY > 0) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
 });
 
-
-//menu button
+/*==================== Menu Button ====================*/
 const menuBtn = document.getElementById('menu-btn');
 const menu = document.getElementById('menu');
-const menuItems = menu.querySelectorAll('a'); // Alle Links im Menü auswählen
+const menuItems = menu.querySelectorAll('a');
 
-// Menü öffnen/schließen beim Button-Klick
 menuBtn.addEventListener('click', () => {
     menuBtn.classList.toggle('open');
     menu.classList.toggle('open');
 });
 
-// Menü schließen, wenn ein Menüpunkt angeklickt wird
 menuItems.forEach(item => {
     item.addEventListener('click', () => {
         menuBtn.classList.remove('open');
@@ -261,22 +258,16 @@ menuItems.forEach(item => {
     });
 });
 
-
-//Accordion logik
+/*==================== Accordion Logic ====================*/
 const accordionItems = document.querySelectorAll('.accordion-item');
 
 accordionItems.forEach(item => {
-    const content = item.querySelector('.accordion-content');
-
     item.addEventListener('click', () => {
         if (window.innerWidth <= 760) {
-            // Wenn das aktuelle Accordion schon offen ist
             const isActive = item.classList.contains('active');
 
-            // Alle Accordions schließen
             accordionItems.forEach(i => i.classList.remove('active'));
 
-            // Nur das aktuelle öffnen, falls es nicht aktiv war
             if (!isActive) {
                 item.classList.add('active');
             }
