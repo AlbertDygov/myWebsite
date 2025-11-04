@@ -14,17 +14,31 @@ const cursor = document.getElementById('cursor');
 const cursorFollower = document.getElementById('cursorFollower');
 
 if (window.innerWidth > 768) {
+    let mouseX = 0;
+    let mouseY = 0;
+    let followerX = 0;
+    let followerY = 0;
+    
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        
-        setTimeout(() => {
-            cursorFollower.style.left = e.clientX - 20 + 'px';
-            cursorFollower.style.top = e.clientY - 20 + 'px';
-        }, 100);
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
     });
+    
+    // Smooth animation for follower with glass-like fluidity
+    function animateFollower() {
+        followerX += (mouseX - followerX) * 1.08;
+        followerY += (mouseY - followerY) * 1.08;
+        
+        cursorFollower.style.left = followerX - 25 + 'px';
+        cursorFollower.style.top = followerY - 25 + 'px';
+        
+        requestAnimationFrame(animateFollower);
+    }
+    animateFollower();
 
-    const hoverElements = document.querySelectorAll('a, button, .service-card, .certificate-card');
+    const hoverElements = document.querySelectorAll('a, button, .service-card, .certificate-card, input, textarea');
     hoverElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
             cursor.classList.add('hover');
@@ -34,6 +48,17 @@ if (window.innerWidth > 768) {
             cursor.classList.remove('hover');
             cursorFollower.classList.remove('hover');
         });
+    });
+    
+    // Add glass-like shimmer effect on mouse down
+    document.addEventListener('mousedown', () => {
+        cursor.style.transform = 'scale(0.8)';
+        cursorFollower.style.transform = 'scale(0.9)';
+    });
+    
+    document.addEventListener('mouseup', () => {
+        cursor.style.transform = '';
+        cursorFollower.style.transform = '';
     });
 } else {
     cursor.style.display = 'none';

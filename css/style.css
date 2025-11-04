@@ -102,34 +102,56 @@ img {
 
 /* ==================== CURSOR EFFECT ==================== */
 .cursor {
-    width: 10px;
-    height: 10px;
-    background: var(--main-color);
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 9998;
-    transition: transform 0.15s ease;
-    mix-blend-mode: difference;
+    transition: transform 0.15s ease, background 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 0 20px rgba(110, 159, 112, 0.3),
+        0 0 40px rgba(110, 159, 112, 0.1),
+        inset 0 0 10px rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .cursor-follower {
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--main-color);
+    width: 50px;
+    height: 50px;
+    background: rgba(110, 159, 112, 0.1);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 9997;
     transition: all 0.3s ease;
-    mix-blend-mode: difference;
+    backdrop-filter: blur(15px);
+    box-shadow: 
+        0 0 30px rgba(110, 159, 112, 0.2),
+        0 0 60px rgba(110, 159, 112, 0.1),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.cursor.hover,
+.cursor.hover {
+    transform: scale(1.8);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 
+        0 0 30px rgba(0, 255, 136, 0.5),
+        0 0 60px rgba(0, 255, 136, 0.2),
+        inset 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
 .cursor-follower.hover {
     transform: scale(1.5);
-    background: var(--accent-color);
-    border-color: var(--accent-color);
+    background: rgba(0, 255, 136, 0.15);
+    border: 1px solid rgba(0, 255, 136, 0.4);
+    box-shadow: 
+        0 0 40px rgba(0, 255, 136, 0.3),
+        0 0 80px rgba(0, 255, 136, 0.1),
+        inset 0 0 25px rgba(255, 255, 255, 0.3);
 }
 
 /* ==================== HEADER ==================== */
